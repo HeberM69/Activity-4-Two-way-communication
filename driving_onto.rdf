@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto/"
+     xml:base="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto">
+        <rdfs:comment>Ontology of  a driving  agent</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#has_destination -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#has_destination">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#has_destination"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Driver"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#has_destination"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Location"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#is_at -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#is_at">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#is_at"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Agent"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#is_at"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Location"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Agent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Entity"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Driver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Driver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Agent"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Entity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Location">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#PointA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#PointA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Location"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#PointB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#PointB -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#PointB">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Vehicle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Vehicle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/carlos/ontologies/2023/10/driving_onto#Agent"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
